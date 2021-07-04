@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App666.TelaLogin"
+             xmlns:converters="clr-namespace:App666"
+>
+    <ContentPage.Content >
+        <StackLayout Padding="50,30"  >
+            <Label Text="Bem vindo ao sistema SGC!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout Spacing="10" Orientation="Horizontal">
+                <Label Text="Login" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Entry Text="{Binding _webAPI.login.login}" x:Name="login" IsSpellCheckEnabled="false" IsTextPredictionEnabled="false" Placeholder="Login" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <StackLayout Spacing="10" Orientation="Horizontal">
+                <Label Text="Senha" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Entry Text="{Binding _webAPI.login.senha}" x:Name="senha" IsSpellCheckEnabled="false" IsTextPredictionEnabled="false" Placeholder="Senha" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <Label TextColor="Red" IsVisible="{Binding  _webAPI.mostraMensagemErro}" Text="{Binding  _webAPI.mensagemDeErro}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            
+            <Button Text="Acessar o sistema"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="OnButtonClicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

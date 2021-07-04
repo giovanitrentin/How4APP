@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App666.CadastroCliente">
+    <ContentPage.Content>
+        <StackLayout Padding="50,30">
+            <Label Text="Cadastro de Cliente"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="Id" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding id}" x:Name="id" Placeholder="Código" IsReadOnly="True" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="Nome" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding nome}" x:Name="nome" Placeholder="Nome Fantasia" HorizontalOptions="FillAndExpand"  />
+            </StackLayout>
+            
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="Razão Social" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding razaoSocial}" x:Name="razaoSocial" Placeholder="Razão Social" HorizontalOptions="FillAndExpand"  />
+            </StackLayout>
+            
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="Telefone" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding telefone}" x:Name="telefone" Placeholder="Telefone" HorizontalOptions="FillAndExpand"  />
+            </StackLayout>
+            
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="WebSite" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding webSite}" x:Name="webSite" Placeholder="Website" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="E-mail" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding email}" x:Name="email" Placeholder="E-mail" HorizontalOptions="FillAndExpand"  />
+            </StackLayout>
+            
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="Fundação" VerticalOptions="Center" HorizontalOptions="Center" />
+                <DatePicker Date="{Binding fundacao}" x:Name="fundacao" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="Cadastro Ativo" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Switch IsToggled="{Binding isAtivo}" x:Name="isAtivo"  />
+            </StackLayout>
+
+            <Label TextColor="Red" IsVisible="{Binding  _login.mostraMensagemErro}" Text="{Binding  _login.mensagemDeErro}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            
+            <Button Text="Gravar os dados" Clicked="OnButtonClicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

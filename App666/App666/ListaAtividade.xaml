@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App666.ListaAtividade">
+    <ContentPage.Content>
+        <StackLayout Padding="50,30">
+            <Label Text="Selecione uma aticidade para dar sequencia!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Ou cadastre um nova clicando em Adicionar!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Adicionar Nova Atividade Cliente" Clicked="OnButtonAdicionarClicked" />
+
+            <CollectionView ItemsSource="{Binding listaAtividade}"
+                SelectionMode="Single"
+                SelectionChanged="OnSelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10"
+                            RowDefinitions="Auto, *"
+                            ColumnDefinitions="Auto, *">
+                            <Label Grid.Column="1"
+                               Text="{Binding id}" 
+                               FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Text="{Binding nome}"
+                               VerticalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

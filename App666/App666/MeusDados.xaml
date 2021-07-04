@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App666.MeusDados">
+    <ContentPage.Content>
+        <StackLayout Padding="50,30">
+            <Label Text="Altere seus dados e clique me gravar!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="Id" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding _login.token.vendedor.id}" x:Name="id" IsReadOnly="True" Placeholder="Id" />
+            </StackLayout>
+
+            <StackLayout Spacing="10" Orientation="Horizontal">
+                <Label Text="Nome" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding _login.token.vendedor.nome}" x:Name="nome" Placeholder="Nome Completo" HorizontalOptions="FillAndExpand" IsSpellCheckEnabled="false"  />
+            </StackLayout>
+
+            <StackLayout Spacing="10" Orientation="Horizontal">
+                <Label Text="Nascimento" VerticalOptions="Center" HorizontalOptions="Center" />
+                <DatePicker Date="{Binding _login.token.vendedor.nascimento}" x:Name="nascimento" />
+            </StackLayout>
+            
+            <StackLayout Spacing="10" Orientation="Horizontal">
+                <Label Text="CPF" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding _login.token.vendedor.cpf}" x:Name="cpf" Placeholder="CPF" HorizontalOptions="FillAndExpand"  />
+            </StackLayout>
+
+            <StackLayout Spacing="10" Orientation="Horizontal">
+                <Label Text="Celular" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding _login.token.vendedor.telefone}" x:Name="telefone" Placeholder="Celular" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <StackLayout Spacing="10" Orientation="Horizontal">
+                <Label Text="E-mail" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding _login.token.vendedor.email}" x:Name="email" Placeholder="E-mail" HorizontalOptions="FillAndExpand"  />
+            </StackLayout>
+
+            <StackLayout Spacing="10" Orientation="Horizontal">
+                <Label Text="Login" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding _login.token.vendedor.login}" x:Name="login" Placeholder="Login" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <StackLayout Spacing="10" Orientation="Horizontal">
+                <Label Text="Senha" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding _login.token.vendedor.senha}" x:Name="senha" Placeholder="Senha" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <Label TextColor="Red" IsVisible="{Binding  _login.mostraMensagemErro}" Text="{Binding  _login.mensagemDeErro}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Gravar os dados" Clicked="OnButtonClicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App666.CadastroAtividade">
+    <ContentPage.Content>
+        <StackLayout  Padding="20,20">
+            <Label Text="Cadastro de Atividade"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="Título" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Editor Text="{Binding _atividade.nome}" x:Name="nome" Placeholder="Nome da atividade" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Spacing="15"  Orientation="Vertical">
+                <Label Text="Cliente" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <Picker Title="Selecione o Cliente da Atividade" x:Name="PickerCtl" HorizontalOptions="FillAndExpand"
+                     ItemsSource="{Binding _listaCliente}"
+                     ItemDisplayBinding="{Binding razaoSocial}"
+                     SelectedItem="{Binding _clienteSelecionado}" SelectedIndexChanged="OnButtonClickedCliente"/>
+            </StackLayout>
+
+            <StackLayout Spacing="15"  Orientation="Vertical">
+                <Label Text="Descrição" VerticalOptions="Center" HorizontalOptions="Start" />
+                <Editor Text="{Binding _atividade.descricaoContato}" x:Name="descricao" Placeholder="Nome da atividade" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="Data Contato" VerticalOptions="Center" HorizontalOptions="Center" />
+                <DatePicker Date="{Binding _atividade.dataContato}" x:Name="dataContato" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="Data Retorno" VerticalOptions="Center" HorizontalOptions="Center" />
+                <DatePicker Date="{Binding _atividade.dataRetorno}" x:Name="dataRetorno" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Spacing="15" Orientation="Horizontal">
+                <Label Text="Contato Ativo" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Switch IsToggled="{Binding _atividade.isAtivo}" x:Name="isAtivo" HorizontalOptions="Start" />
+            </StackLayout>
+
+            <Label TextColor="Red" IsVisible="{Binding  _webAPI.mostraMensagemErro}" Text="{Binding  _webAPI.mensagemDeErro}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            
+            <Button Text="Gravar os dados" Clicked="OnButtonClicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
